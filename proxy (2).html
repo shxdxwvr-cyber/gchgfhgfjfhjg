@@ -1,0 +1,29 @@
+<html>
+<head>
+</head>
+<body>
+<button onclick="openGame()">Open Game</button>
+<script>
+function openGame() {
+    // Asks the user for a URL.
+    var url = prompt("Enter the website URL:", "");
+
+    // If someone clicks 'Cancel', url will be null. This check prevents opening a blank window.
+    if (url) {
+        var win = window.open();
+        var iframe = win.document.createElement('iframe');
+        iframe.style.width = "100%";
+        iframe.style.height = "100%";
+        iframe.style.border = "none";
+        
+        //makes sure that it has an https:// or http address so that it can work
+        iframe.src = url.startsWith('http') ? url : 'https://' + url;
+        
+        win.document.body.style.margin = "0"; // Removes white borders in the new window
+        win.document.body.appendChild(iframe);
+    }
+}
+
+</script>
+</body>
+</html>
