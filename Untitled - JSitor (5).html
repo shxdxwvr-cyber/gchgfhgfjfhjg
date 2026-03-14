@@ -1,0 +1,50 @@
+<!doctype html><html><head></head><body><!DOCTYPE html>
+<html>
+
+<head>
+	<title>Open</title>
+</head>
+
+<body style="background:black; display:flex; justify-content:center; align-items:center; height:100vh;">
+
+	<button onclick="openSite()" style="padding:15px 30px; font-size:18px; cursor:pointer;">
+Open
+</button>
+
+	<script>
+		function openSite() {
+    var tab = window.open("about:blank", "_blank");
+
+    tab.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+        <title>about:blank</title>
+        <style>
+            html,body{
+                margin:0;
+                padding:0;
+                height:100%;
+                overflow:hidden;
+                background:black;
+            }
+            iframe{
+                border:none;
+                width:100%;
+                height:100%;
+            }
+        </style>
+        </head>
+        <body>
+            <iframe src="https://truffled.lol/"></iframe>
+        </body>
+        </html>
+    `);
+
+    tab.document.close();
+}
+	</script>
+
+</body>
+
+</html></body><html>
